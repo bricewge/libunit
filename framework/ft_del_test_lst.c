@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:18:56 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 14:56:56 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 15:00:44 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_del_test_lst(test_lst *base)
 	{
 		while (tmp->next)
 			tmp = tmp->next;
+		ft_strdel(&tmp->name);
 		free(tmp);
 		tmp = NULL;
 		tmp = base;
