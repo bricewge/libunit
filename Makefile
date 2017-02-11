@@ -6,52 +6,78 @@
 #    By: starrit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 11:30:09 by starrit           #+#    #+#              #
-#    Updated: 2017/02/11 12:21:30 by starrit          ###   ########.fr        #
+#    Updated: 2017/02/11 16:51:06 by bwaegene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# Disable implicit rules
+.SUFFIXES:
+
+# Compiler configuration
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+## Flags for the C preprocessor
+CPPFLAGS = -I$(INCLUDE) -I$(LIB_PATH)/include
+## Libraries path
+LDFLAGS = -L$(LIB)
+## Libraries to link into the executable
+LDLIBS = -lft
 NAME = libunit.a
 
-CC = gcc
-FLAGS = -g\
-		-Wall -Wextra -Werror
-SRCSDIR = framework/
-TESTDIR = framwork/test
+# Project related variables
+SRC_PATH = framework
+SRC_NAME =	ft_add_test_lst.c			\
+			ft_create_test_lst.c		\
+			ft_del_test_lst.c			\
+			load_test.c
+OBJ_PATH =  obj
+OBJ_NAME = $(SRC_NAME:.c=.o)
+SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
+LIB_PATH = libft
+LIB_NAME = 	ft_putstr.c					\
+			ft_putendl.c
+LIB_OBJ = $(addprefix obj/, $(LIB_NAME:.c=.o))
+INCLUDE = framework
+HEADER = $(INCLUDE)/$(NAME:.a=.h)
 
-BASENAME = 
+DEBUG ?= 0
+ifeq ($(DEBUG), 1)
+    CFLAGS += -g
+endif
 
-TBASENAME = main.c\
+all: $(NAME)
 
-SRCS = $(addprefix $(SRCSDIR), $(addsuffix .c, $(BASENAME)))
-OBJS = $(addsuffix .o, $(BASENAME))
+$(NAME): $(addprefix $(LIB_PATH)/, $(LIB_OBJ)) $(OBJ)
+	ar rc $(NAME) $(addprefix $(LIB_PATH)/, $(LIB_OBJ)) $(OBJ)
+	ranlib $(NAME)
 
-TSRCS = $(addprefix $(TESTDIR), $(addsuffic .c, $(TBASENAME)))
-TOBJS = $(addsuffix .o, $(TBASENAME))
+$(OBJ_PATH):
+	mkdir $@
 
-HEAD = .h #	+ libft.h if necessary
+$(OBJ): | $(OBJ_PATH)
 
-all = $(NAME)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(NAME): $(SRCS)
-	@$(CC) $(FLAGS) -c $(SRCS)
-	@ar rc $(NAME) $(OBJS)
-	@ranlib $(NAME)
-	@echo "making library."
+# /!\ Dirty workaround /!\
+# If make on the libft directory should rebuild something then PHONY the rule
+# libft to build it. Otherwise it relink.
+ifeq ($(shell $(MAKE) --question -C ./$(LIB_PATH) ; echo $$?), 1)
+.PHONY: $(LIB_PATH)/obj/%.o
+endif
 
-#test: $(NAME)
-	#	compile tests
-	#	exec tests
+$(LIB_PATH)/obj/%.o:
+	$(MAKE) -C ./$(LIB_PATH) $(LIB_OBJ)
 
+.PHONY: clean
 clean:
-	@rm -f $(OBJS)
-	#	rm -f test/OBJS
-	@echo "deleting objects."
+	$(MAKE) -C ./$(LIB_PATH) clean
+	$(RM) -r $(OBJ_PATH)
 
 fclean: clean
-	@rm -f $(NAME)
-	#	rm -f test/a.out
-	@echo "deleting exec."
+	$(MAKE) -C ./$(LIB_PATH) fclean
+	$(RM) -r $(NAME) $(NAME).dSYM
 
-re: fclean all
-
-.PHONY: all $(NAME) clean fclean re #test
+re: fclean
+	$(MAKE) all
