@@ -6,14 +6,15 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 18:49:44 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 19:08:05 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-static void	ft_nosignal(int *res, int a)
+static void	ft_nosignal(t_test *tmp, int *res, int a)
 {
+	ft_putstr(tmp->name);
 	if (a == 0)
 	{
 		ft_putendl(" : [OK]");
@@ -23,8 +24,9 @@ static void	ft_nosignal(int *res, int a)
 		ft_putendl(" : [KO]");
 }
 
-static void	ft_signal(int	status)
+static void	ft_signal(t_test *tmp, int	status)
 {
+	ft_putstr(tmp->name);
 	if (status == 10)
 		ft_putendl(" : [BUSE]");
 	else if (status == 11)
@@ -53,17 +55,16 @@ void		launch_tests(t_test **testlist, int *res_test)
 		else//pid > 0 = on est dans le process pere
 		{
 			wait(status);
-			ft_putstr(tmp->name);
 			if (!WIFSIGNALED(status))//on n'a pas quitte a cause d'un signal
 			{
 				ret = tmp->f();
 				if (ret == 0)
-					ft_nosignal(res_test, 0);
+					ft_nosignal(tmp, res_test, 0);
 				else
-					ft_nosignal(res_test, 1);
+					ft_nosignal(tmp, res_test, 1);
 			}
 			else// on a quitte a cause d'un signal (segv, buse)
-				ft_signal(*status);
+				ft_signal(tmp, *status);
 			res_test[1]++;
 		}
 		tmp = tmp->next;
