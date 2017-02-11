@@ -6,13 +6,13 @@
 /*   By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 14:55:53 by bwaegene          #+#    #+#             */
-/*   Updated: 2016/12/27 18:03:07 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 23:39:08 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isize(int nb)
+static int	ft_isize(long long int nb)
 {
 	int		i;
 	int		tmp;
@@ -26,7 +26,7 @@ static int	ft_isize(int nb)
 	return (i);
 }
 
-char		*ft_itoa(int nb)
+char		*ft_itoa(long long int nb)
 {
 	int		i;
 	char	*result;

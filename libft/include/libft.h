@@ -6,7 +6,7 @@
 /*   By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/16 20:40:18 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/05 12:52:58 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 23:39:19 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char					*ft_strsub(char const *s, unsigned int start,
 char					*ft_strjoin(char const *s1, char const *s2);
 char					*ft_strtrim(char const *s);
 char					**ft_strsplit(char const *s, char c);
-char					*ft_itoa(int nb);
+char					*ft_itoa(long long int nb);
 void					ft_putchar(int c);
 int						ft_atoi(const char *str);
 void					ft_putstr(char *str);
