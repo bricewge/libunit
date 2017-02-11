@@ -6,7 +6,7 @@
 #    By: starrit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 11:30:09 by starrit           #+#    #+#              #
-#    Updated: 2017/02/11 19:51:34 by starrit          ###   ########.fr        #
+#    Updated: 2017/02/11 20:06:10 by starrit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRC_NAME =	ft_add_test_lst.c			\
 			ft_create_test_lst.c		\
 			ft_del_test_lst.c			\
 			load_test.c					\
-			launch_test.c
+			launch_test.c				\
+			print_total.c
 OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
