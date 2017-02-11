@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 16:25:27 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 17:53:52 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,30 @@ static void	ft_signal(int	status)
 		ft_putendl(" : [UNEXPECTED SIGNAL ERROR]");
 }
 
-void		launch_test(t_test *testlist, int *res_test)
+void		launch_tests(t_test **testlist, int *res_test)
 {
 	t_test	*tmp;
 	pid_t	pid;
 	int		*status;
 	int		ret;
 
-	tmp = testlist;
+	tmp = *testlist;
 	ret = 0;
+	status = 0;
 	while (tmp)
 	{
 		pid = fork();
 		if (pid == -1)// il y a eu une erreur
 			exit (EXIT_FAILURE);
 		else if (pid == 0)//on est dans le processur fils
-			ret = tmp->(*f)();
+			ret = tmp->f();
 		else//pid > 0 = on est dans le process pere
 		{
 			wait(status);
-			ft_putstr(tmp->name);
+			ft_putstr(*(tmp->name));
 			if (!WIFSIGNALED(*status))//on n'a pas quitte a cause d'un signal
 			{
-				ret = tmp->(*f)();
+				ret = tmp->f();
 				if (ret == 0)
 					ft_nosignal(res_test, 0);
 				else
@@ -63,7 +64,7 @@ void		launch_test(t_test *testlist, int *res_test)
 			}
 			else// on a quitte a cause d'un signal (segv, buse)
 				ft_signal(*status);
-			res[1]++;
+			res_test[1]++;
 		}
 		tmp = tmp->next;
 	}

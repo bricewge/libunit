@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:16:34 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 16:41:09 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 18:01:20 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_add_test_lst(t_test *base)
 
 	new = NULL;
 	tmp = base;
-	ft_create_test_lst(new);
+	new = ft_create_test_lst();
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new;

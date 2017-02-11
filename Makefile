@@ -6,7 +6,7 @@
 #    By: starrit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 11:30:09 by starrit           #+#    #+#              #
-#    Updated: 2017/02/11 16:51:06 by bwaegene         ###   ########.fr        #
+#    Updated: 2017/02/11 17:38:15 by bwaegene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,14 +29,17 @@ SRC_PATH = framework
 SRC_NAME =	ft_add_test_lst.c			\
 			ft_create_test_lst.c		\
 			ft_del_test_lst.c			\
-			load_test.c
+			load_test.c					\
+			launch_test.c
 OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 LIB_PATH = libft
 LIB_NAME = 	ft_putstr.c					\
-			ft_putendl.c
+			ft_putendl.c				\
+			ft_putchar.c				\
+			ft_strlen.c
 LIB_OBJ = $(addprefix obj/, $(LIB_NAME:.c=.o))
 INCLUDE = framework
 HEADER = $(INCLUDE)/$(NAME:.a=.h)
