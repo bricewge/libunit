@@ -6,7 +6,7 @@
 #    By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 09:48:23 by bwaegene          #+#    #+#              #
-#    Updated: 2017/02/11 20:56:34 by starrit          ###   ########.fr        #
+#    Updated: 2017/02/11 22:30:16 by bwaegene         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -26,11 +26,12 @@ NAME = tests
 
 # Project related variables
 SRC_PATH = .
-SRC_NAME =	main.c					\
-			strlen/00_launcher.c	\
-			strlen/01_basic_test.c	\
-			strlen/02_null_test.c	\
-			strlen/03_abort_test.c
+SRC_NAME =	main.c						\
+			strlen/00_launcher.c		\
+			strlen/01_ok_test.c			\
+			strlen/02_ko_test.c			\
+			strlen/03_segfault_test.c	\
+			strlen/04_buserror_test.c
 OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))

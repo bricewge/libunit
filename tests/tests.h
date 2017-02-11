@@ -6,7 +6,7 @@
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 17:25:43 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 20:55:20 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 22:30:41 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define TESTS_H
 #include "libunit.h"
 void		strlen_launcher(int *res_test);
-int			basic_test(void);
-int			null_test(void);
-int			abort_test(void);
+int			ok_test(void);
+int			ko_test(void);
+int			segfault_test(void);
+int			buserror_test(void);
 #endif

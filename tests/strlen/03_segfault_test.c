@@ -6,14 +6,14 @@
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:44:02 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 15:46:24 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 19:52:22 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-int		null_test(void)
+int		segfault_test(void)
 {
 	if (ft_strlen(NULL) == strlen(NULL))
 		return (0);
