@@ -6,7 +6,7 @@
 #    By: starrit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 11:30:09 by starrit           #+#    #+#              #
-#    Updated: 2017/02/11 22:46:09 by starrit          ###   ########.fr        #
+#    Updated: 2017/02/11 23:40:03 by starrit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,11 @@ LIB_NAME = 	ft_putstr.c					\
 			ft_strcpy.c					\
 			ft_putnbr.c					\
 			ft_atoi.c					\
-			ft_itoa.c
+			ft_itoa.c					\
+			ft_isdigit.c				\
+			ft_isspace.c				\
+			ft_strnew.c					\
+			ft_memset.c
 LIB_OBJ = $(addprefix obj/, $(LIB_NAME:.c=.o))
 INCLUDE = framework
 HEADER = $(INCLUDE)/$(NAME:.a=.h)
