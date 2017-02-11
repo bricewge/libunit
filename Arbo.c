@@ -1,4 +1,5 @@
 rendu :
+		auteur
 		Makefile
 		framework	: 
 						srcs pour la lib
