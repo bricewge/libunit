@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:46:15 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 14:59:40 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 15:41:13 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 #include "libft/libft.h"
 typedef struct			s_test
 {
-	int					res;
 	char				*name;
-	int (*f)(void)		fct;
+	int 				(*f)(void);
 	struct test_struct	*next;
 }						t_test;
 /*
