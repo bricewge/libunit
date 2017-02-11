@@ -6,7 +6,7 @@
 #    By: starrit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 11:30:09 by starrit           #+#    #+#              #
-#    Updated: 2017/02/11 11:41:41 by starrit          ###   ########.fr        #
+#    Updated: 2017/02/11 11:46:32 by starrit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,11 @@ NAME = libunit.a
 CC = gcc
 FLAGS = -g\
 		-Wall -Wextra -Werror
+SRCSDIR = framework/
 
 BASENAME = 
 
-SRCS = $(addsuffix .c, $(BASENAME))
+SRCS = $(addprefix $(SRCSDIR), $(addsuffix .c, $(BASENAME)))
 OBJS = $(addsuffix .o, $BASENAME))
 
 HEAD = .h
