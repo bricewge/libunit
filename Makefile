@@ -6,7 +6,7 @@
 #    By: starrit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 11:30:09 by starrit           #+#    #+#              #
-#    Updated: 2017/02/11 12:02:30 by starrit          ###   ########.fr        #
+#    Updated: 2017/02/11 12:21:30 by starrit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,17 @@ CC = gcc
 FLAGS = -g\
 		-Wall -Wextra -Werror
 SRCSDIR = framework/
+TESTDIR = framwork/test
 
 BASENAME = 
 
+TBASENAME = main.c\
+
 SRCS = $(addprefix $(SRCSDIR), $(addsuffix .c, $(BASENAME)))
-OBJS = $(addsuffix .o, $BASENAME))
+OBJS = $(addsuffix .o, $(BASENAME))
+
+TSRCS = $(addprefix $(TESTDIR), $(addsuffic .c, $(TBASENAME)))
+TOBJS = $(addsuffix .o, $(TBASENAME))
 
 HEAD = .h #	+ libft.h if necessary
 
