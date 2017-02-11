@@ -6,7 +6,7 @@
 #    By: starrit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 11:30:09 by starrit           #+#    #+#              #
-#    Updated: 2017/02/11 11:46:32 by starrit          ###   ########.fr        #
+#    Updated: 2017/02/11 11:52:37 by starrit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ BASENAME =
 SRCS = $(addprefix $(SRCSDIR), $(addsuffix .c, $(BASENAME)))
 OBJS = $(addsuffix .o, $BASENAME))
 
-HEAD = .h
+HEAD = .h # + libft.h if necessary
 
 all = $(NAME)
 
