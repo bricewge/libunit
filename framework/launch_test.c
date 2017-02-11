@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 19:08:05 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 19:38:46 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void		launch_tests(t_test **testlist, int *res_test)
 {
 	t_test	*tmp;
 	pid_t	pid;
-	int		*status;
+	int		status;
 	int		ret;
 
 	tmp = *testlist;
@@ -51,10 +51,13 @@ void		launch_tests(t_test **testlist, int *res_test)
 		if (pid == -1)// il y a eu une erreur
 			exit (EXIT_FAILURE);
 		else if (pid == 0)//on est dans le processur fils
+		{
 			ret = tmp->f();
+			break ;
+		}
 		else//pid > 0 = on est dans le process pere
 		{
-			wait(status);
+			wait(&status);
 			if (!WIFSIGNALED(status))//on n'a pas quitte a cause d'un signal
 			{
 				ret = tmp->f();
@@ -64,9 +67,9 @@ void		launch_tests(t_test **testlist, int *res_test)
 					ft_nosignal(tmp, res_test, 1);
 			}
 			else// on a quitte a cause d'un signal (segv, buse)
-				ft_signal(tmp, *status);
+				ft_signal(tmp, status);
 			res_test[1]++;
+			tmp = tmp->next;
 		}
-		tmp = tmp->next;
 	}
 }
