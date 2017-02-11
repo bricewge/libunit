@@ -6,25 +6,25 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:46:15 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 16:27:35 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 16:43:57 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBUNIT_H
 # define LIBUNIT_H
-#include "../libft/libft.h"
+#include "libft.h"
 typedef struct			s_test
 {
 	char				*name;
 	int 				(*f)(void);
-	struct test_struct	*next;
+	struct s_test		*next;
 }						t_test;
 /*
 **			LIST FUNCTIONS
 */
-void		ft_create_test_lst(test_lst *new_test);
-void		ft_add_test_lst(test_lst *base);
-void		ft_del_test_lst(test_lst *base);
+void		ft_create_test_lst(t_test *new_test);
+void		ft_add_test_lst(t_test *base);
+void		ft_del_test_lst(t_test *base);
 /*
 **			M_FRAMEWORK FUNCTIONS
 */

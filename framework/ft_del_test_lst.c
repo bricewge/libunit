@@ -6,15 +6,15 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:18:56 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 15:00:44 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 16:42:44 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-void	ft_del_test_lst(test_lst *base)
+void	ft_del_test_lst(t_test *base)
 {
-	test_lst	*tmp;
+	t_test	*tmp;
 
 	tmp = base;
 	while (base)
