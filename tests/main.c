@@ -6,7 +6,7 @@
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 14:20:14 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 17:29:55 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 19:55:06 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int main()
 	/* print_header(); */
 	strlen_launcher(res_test);
 	/* gnl_laucher(); */
-	/* return (print_total(res_test)); */
-	return (0);
+	return (print_total(res_test));
 }
