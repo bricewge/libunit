@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_header.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 14:20:14 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 23:36:59 by bwaegene         ###   ########.fr       */
+/*   Created: 2017/02/11 23:12:40 by bwaegene          #+#    #+#             */
+/*   Updated: 2017/02/11 23:35:17 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libunit.h"
 
-int main()
+void	print_header(void)
 {
-	int		res_test[2];
-
-	res_test[0] = 0;
-	res_test[1] = 0;
-	print_header();
-	strlen_launcher(res_test);
-	return (print_total(res_test));
+	ft_putendl("*********************************");
+	ft_putendl("****     42 - Unit Tests     ****");
+	ft_putendl("*********************************");
 }

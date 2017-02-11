@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 22:40:30 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 23:22:54 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	ft_nosignal(t_test *tmp, int *res, int a)
 {
+	ft_putstr("    > ");
 	ft_putstr(tmp->name);
 	if (a == 0)
 	{
@@ -26,6 +27,7 @@ static void	ft_nosignal(t_test *tmp, int *res, int a)
 
 static void	ft_signal(t_test *tmp, int	status)
 {
+	ft_putstr("    > ");
 	ft_putstr(tmp->name);
 	if (status == 10)
 		ft_putendl(" : [BUSE]");

@@ -6,7 +6,7 @@
 #    By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 09:48:23 by bwaegene          #+#    #+#              #
-#    Updated: 2017/02/11 22:30:16 by bwaegene         ###   ########.fr        #
+#    Updated: 2017/02/11 23:10:41 by bwaegene         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -67,6 +67,9 @@ endif
 
 ../libunit.a:
 	$(MAKE) -C ../
+
+test: $(NAME)
+	./tests
 
 .PHONY: clean
 clean:
