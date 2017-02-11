@@ -7,7 +7,7 @@ rendu :
 		test 		: 
 						Makefile (?)
 						main.c
-						get_next_line : 
+						strlen : 
 										00_launcher.c
 										01_basic_succes_test.c
 										02_basic_error_test.c

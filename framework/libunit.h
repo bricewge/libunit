@@ -6,31 +6,26 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:46:15 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 13:27:50 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 14:48:18 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBUNIT_H
 # define LIBUNIT_H
 #include "libft/libft.h"
-typedef struct			test_struct
+typedef struct			s_test
 {
-	char				*t_name;
-	char				*t_res;
+	int					res;
 	struct test_struct	*next;
-}						test_lst;
-typedef struct			fct_struct
-{
-	struct	test_struct	*test;
-	struct	fct_struct	*next;
-}						fct_lst;
+}						t_test;
 /*
 **			LIST FUNCTIONS
 */
-void		ft_create_fct_lst(fct_lst *new_fct);
 void		ft_create_test_lst(test_lst *new_test);
-void		ft_add_fct_lst(fct_lst *base);
 void		ft_add_test_lst(test_lst *base);
-void		ft_del_fct_lst(fct_lst *base);
 void		ft_del_test_lst(test_lst *base);
+
+void		load_test(t_test *testlist, char *name, int (*f)(void));
+void		lauch_test(t_test *testlist, int *res_test);
+int			print_total(int *res_test);
 #endif
