@@ -6,17 +6,18 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:46:15 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 18:03:11 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 18:49:29 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBUNIT_H
 # define LIBUNIT_H
 #include "libft.h"
-#include "signal.h"
+#include <signal.h>
+#include <sys/wait.h>
 typedef struct			s_test
 {
-	char				**name;
+	char				*name;
 	int 				(*f)(void);
 	struct s_test		*next;
 }						t_test;

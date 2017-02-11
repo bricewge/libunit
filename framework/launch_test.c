@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 17:53:52 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 18:49:44 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void		launch_tests(t_test **testlist, int *res_test)
 		else//pid > 0 = on est dans le process pere
 		{
 			wait(status);
-			ft_putstr(*(tmp->name));
-			if (!WIFSIGNALED(*status))//on n'a pas quitte a cause d'un signal
+			ft_putstr(tmp->name);
+			if (!WIFSIGNALED(status))//on n'a pas quitte a cause d'un signal
 			{
 				ret = tmp->f();
 				if (ret == 0)

@@ -6,7 +6,7 @@
 #    By: starrit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 11:30:09 by starrit           #+#    #+#              #
-#    Updated: 2017/02/11 17:38:15 by bwaegene         ###   ########.fr        #
+#    Updated: 2017/02/11 18:48:47 by bwaegene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,9 @@ LIB_PATH = libft
 LIB_NAME = 	ft_putstr.c					\
 			ft_putendl.c				\
 			ft_putchar.c				\
-			ft_strlen.c
+			ft_strlen.c					\
+			ft_strdup.c					\
+			ft_strcpy.c
 LIB_OBJ = $(addprefix obj/, $(LIB_NAME:.c=.o))
 INCLUDE = framework
 HEADER = $(INCLUDE)/$(NAME:.a=.h)
