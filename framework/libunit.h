@@ -6,13 +6,13 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:46:15 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 15:41:13 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 16:27:35 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBUNIT_H
 # define LIBUNIT_H
-#include "libft/libft.h"
+#include "../libft/libft.h"
 typedef struct			s_test
 {
 	char				*name;
