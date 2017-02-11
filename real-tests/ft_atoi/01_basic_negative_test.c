@@ -6,11 +6,12 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 21:56:24 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 21:56:44 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 23:12:45 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "real-test.h"
 
 int		basic_positive_test(void)
 {

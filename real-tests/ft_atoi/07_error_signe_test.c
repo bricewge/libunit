@@ -6,11 +6,12 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 22:08:12 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 22:08:54 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 23:11:24 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "real-test.h"
 
 int		error_signe_test(void)
 {

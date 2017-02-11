@@ -6,11 +6,11 @@
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 14:20:14 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 21:50:30 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 23:13:27 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real-tests.h"
 
 int main()
 {

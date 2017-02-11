@@ -6,11 +6,12 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 22:21:16 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 22:21:44 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 23:12:36 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "real-test.h"
 
 int		large_negative_loop_test(void)
 {

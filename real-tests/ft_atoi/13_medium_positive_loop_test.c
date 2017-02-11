@@ -6,11 +6,12 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 22:22:36 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 22:23:10 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 23:12:28 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "real-test.h"
 
 int		medium_positive_loop_test(void)
 {

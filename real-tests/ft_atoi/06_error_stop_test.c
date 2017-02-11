@@ -6,11 +6,12 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 22:07:09 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 22:07:55 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 23:11:15 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "real-test.h"
 
 int		error_stop_test(void)
 {

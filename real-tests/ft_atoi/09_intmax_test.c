@@ -6,11 +6,12 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 22:10:23 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 22:10:40 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 23:11:57 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "real-test.h"
 
 int		intmax_test(void)
 {

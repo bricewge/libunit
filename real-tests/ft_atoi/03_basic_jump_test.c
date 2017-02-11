@@ -6,11 +6,12 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 21:57:40 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 21:58:17 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 23:10:48 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "real-test.h"
 
 int		basic_jump_test(void)
 {
