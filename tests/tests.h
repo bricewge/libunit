@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 14:20:14 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 17:29:55 by bwaegene         ###   ########.fr       */
+/*   Created: 2017/02/11 17:25:43 by bwaegene          #+#    #+#             */
+/*   Updated: 2017/02/11 17:30:10 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#ifndef TESTS_H
+# define TESTS_H
 
-int main()
-{
-	int		res_test[2];
-
-	res_test[0] = 0;
-	res_test[1] = 0;
-	/* print_header(); */
-	strlen_launcher(res_test);
-	/* gnl_laucher(); */
-	/* return (print_total(res_test)); */
-	return (0);
-}
+void		strlen_launcher(int *res_test);
+int			basic_test(void);
+int			null_test(void);
+#endif

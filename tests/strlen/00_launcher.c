@@ -6,11 +6,11 @@
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:36:58 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 15:31:41 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 17:32:50 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "101_basic_tests.h"
+#include "tests.h"
 #include "libunit.h"
 
 void		strlen_launcher(int *res_test)
