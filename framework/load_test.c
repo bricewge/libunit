@@ -6,7 +6,7 @@
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 14:55:36 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 18:49:26 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 23:52:16 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void		load_test(t_test **testlist, char *name, int (*f)(void))
 
 	tmp = NULL;
 	if (!name || !f)
-		return;
+		return ;
 	if (!(*testlist))
 		*testlist = ft_create_test_lst();
 	else

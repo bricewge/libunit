@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:11:32 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 18:00:49 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 23:51:58 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_test	*ft_create_test_lst(void)
 {
 	t_test *new_test;
-	
+
 	if ((new_test = (t_test*)malloc(sizeof(*new_test))))
 	{
 		new_test->name = NULL;

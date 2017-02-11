@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:22:54 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/11 23:54:10 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_nosignal(t_test *tmp, int *res, int a)
 		ft_putendl(" : [KO]");
 }
 
-static void	ft_signal(t_test *tmp, int	status)
+static void	ft_signal(t_test *tmp, int status)
 {
 	ft_putstr("    > ");
 	ft_putstr(tmp->name);
@@ -51,11 +51,11 @@ void		launch_tests(t_test **testlist, int *res_test)
 	{
 		pid = fork();
 		if (pid == -1)// il y a eu une erreur
-			exit (EXIT_FAILURE);
+			exit(EXIT_FAILURE);
 		else if (pid == 0)//on est dans le processur fils
 		{
 			ret = tmp->f();
-			exit(0) ;
+			exit(0);
 		}
 		else//pid > 0 = on est dans le process pere
 		{
