@@ -6,7 +6,7 @@
 #    By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 09:48:23 by bwaegene          #+#    #+#              #
-#    Updated: 2017/02/11 21:49:57 by starrit          ###   ########.fr        #
+#    Updated: 2017/02/11 23:01:16 by bwaegene         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -27,21 +27,22 @@ NAME = tests
 # Project related variables
 SRC_PATH = .
 SRC_NAME =	main.c								\
-			ft_atoi/basic_positive_test			\
-			ft_atoi/basic_negative_test			\
-			ft_atoi/basic_jump_test				\
-			ft_atoi/null_test					\
-			ft_atoi/error_test					\
-			ft_atoi/error_stop_test				\
-			ft_atoi/error_signe_test			\
-			ft_atoi/intmin_test					\
-			ft_atoi/intmax_test					\
-			ft_atoi/small_negative_loop_test	\
-			ft_atoi/small_potitive_loop_test	\
-			ft_atoi/medium_negative_loop_test	\
-			ft_atoi/medium_positive_loop_test	\
-			ft_atoi/large_negative_loop_test	\
-			ft_atoi/large_positive_loop_test	\
+			ft_atoi/00_launcher.c					\
+			ft_atoi/02_basic_positive_test.c			\
+			ft_atoi/01_basic_negative_test.c			\
+			ft_atoi/03_basic_jump_test.c				\
+			ft_atoi/04_null_test.c					\
+			ft_atoi/05_error_test.c					\
+			ft_atoi/06_error_stop_test.c				\
+			ft_atoi/07_error_signe_test.c			\
+			ft_atoi/08_intmin_test.c					\
+			ft_atoi/09_intmax_test.c					\
+			ft_atoi/10_small_negative_loop_test.c	\
+			ft_atoi/11_small_positive_loop_test.c	\
+			ft_atoi/12_medium_negative_loop_test.c	\
+			ft_atoi/13_medium_positive_loop_test.c	\
+			ft_atoi/14_large_negative_loop_test.c	\
+			ft_atoi/15_large_positive_loop_test.c
 
 OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
