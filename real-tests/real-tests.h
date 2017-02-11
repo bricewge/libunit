@@ -6,13 +6,14 @@
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 17:25:43 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 23:09:08 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/11 23:25:12 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef REAL_TESTS_H
 # define REAL_TESTS_H
 #include "libunit.h"
+#include <limits.h>
 void		ft_atoi_launcher(int *res_test);
 int			basic_positive_test(void);
 int			basic_negative_test(void);

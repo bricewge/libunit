@@ -6,7 +6,7 @@
 #    By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 09:48:23 by bwaegene          #+#    #+#              #
-#    Updated: 2017/02/11 23:01:16 by bwaegene         ###   ########.fr        #
+#    Updated: 2017/02/11 23:31:47 by starrit          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -22,21 +22,21 @@ CPPFLAGS = -I. -I../$(LIB) -I../libft/include/
 LDFLAGS = -L../
 ## Libraries to link into the executable
 LDLIBS = -lunit
-NAME = tests
+NAME = real-tests
 
 # Project related variables
 SRC_PATH = .
-SRC_NAME =	main.c								\
+SRC_NAME =	main.c									\
 			ft_atoi/00_launcher.c					\
-			ft_atoi/02_basic_positive_test.c			\
-			ft_atoi/01_basic_negative_test.c			\
-			ft_atoi/03_basic_jump_test.c				\
+			ft_atoi/01_basic_negative_test.c		\
+			ft_atoi/02_basic_positive_test.c		\
+			ft_atoi/03_basic_jump_test.c			\
 			ft_atoi/04_null_test.c					\
 			ft_atoi/05_error_test.c					\
-			ft_atoi/06_error_stop_test.c				\
+			ft_atoi/06_error_stop_test.c			\
 			ft_atoi/07_error_signe_test.c			\
-			ft_atoi/08_intmin_test.c					\
-			ft_atoi/09_intmax_test.c					\
+			ft_atoi/08_intmin_test.c				\
+			ft_atoi/09_intmax_test.c				\
 			ft_atoi/10_small_negative_loop_test.c	\
 			ft_atoi/11_small_positive_loop_test.c	\
 			ft_atoi/12_medium_negative_loop_test.c	\
