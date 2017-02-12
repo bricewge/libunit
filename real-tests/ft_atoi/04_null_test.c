@@ -6,14 +6,14 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 21:58:29 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:21:45 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/12 13:05:08 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "real-tests.h"
 
-int		null(void)
+int		null_test(void)
 {
 	if (ft_atoi("0") == atoi("0"))
 		return (0);

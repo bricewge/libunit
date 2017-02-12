@@ -6,14 +6,14 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 21:56:24 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:21:20 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/12 13:04:59 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "real-tests.h"
 
-int		basic_positive_test(void)
+int		basic_negative_test(void)
 {
 	if (ft_atoi("-+789") == atoi("-+789"))
 		return (0);
