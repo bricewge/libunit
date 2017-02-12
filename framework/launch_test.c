@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/12 17:25:07 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/12 19:21:09 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ static void	ft_signal(t_test *tmp, int status)
 	else if (status == 11)
 		ft_putendl(" : \033[31m[SEGV]\033[0m");
 	else if (status == 6)
-		ft_putendl(" : [\033[31mSIGABRT]\033[0m");
+		ft_putendl(" : \033[31m[SIGABRT]\033[0m");
 	else if (status == 14)
-		ft_putendl(" : [\033[33mTIMEOUT]\033[0m");
+		ft_putendl(" : \033[33m[TIMEOUT]\033[0m");
 	else
-		ft_putendl(" : [\033[31mUNEXPECTED SIGNAL ERROR]\033[0m");
+		ft_putendl(" : \033[31m[UNEXPECTED SIGNAL ERROR]\033[0m");
 }
 
 static void	ft_father_part(t_test *tmp, int *res_test, int ret)
@@ -75,7 +75,7 @@ void		launch_tests(t_test **testlist, int *res_test)
 			exit(EXIT_FAILURE);
 		else if (pid == 0)
 		{
-			alarm(100);
+			alarm(10);
 			ret = tmp->f();
 			ft_del_test_lst(testlist);
 			exit(0);

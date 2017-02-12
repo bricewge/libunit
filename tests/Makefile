@@ -6,7 +6,7 @@
 #    By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/18 09:48:23 by bwaegene          #+#    #+#              #
-#    Updated: 2017/02/11 23:10:41 by bwaegene         ###   ########.fr        #
+#    Updated: 2017/02/12 18:58:12 by starrit          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -15,7 +15,8 @@
 
 # Compiler configuration
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror\
+		 -D_XOPEN_SOURCE=700
 ## Flags for the C preprocessor
 CPPFLAGS = -I. -I../$(LIB) -I../libft/include/
 ## Libraries path
@@ -26,12 +27,14 @@ NAME = tests
 
 # Project related variables
 SRC_PATH = .
-SRC_NAME =	main.c					\
-		strlen/00_launcher.c			\
-		strlen/01_ok_test.c			\
-		strlen/02_ko_test.c			\
-		strlen/03_segfault_test.c		\
-		strlen/04_buserror_test.c
+SRC_NAME =	main.c							\
+		m_framework/00_launcher.c			\
+		m_framework/01_ok_test.c			\
+		m_framework/02_ko_test.c			\
+		m_framework/03_segfault_test.c		\
+		m_framework/04_buserror_test.c		\
+		m_framework/05_timeout_test.c		\
+		m_framework/06_free_abort_test.c
 OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
