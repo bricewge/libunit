@@ -26,12 +26,12 @@ NAME = tests
 
 # Project related variables
 SRC_PATH = .
-SRC_NAME =	main.c						\
-			strlen/00_launcher.c		\
-			strlen/01_ok_test.c			\
-			strlen/02_ko_test.c			\
-			strlen/03_segfault_test.c	\
-			strlen/04_buserror_test.c
+SRC_NAME =	main.c					\
+		strlen/00_launcher.c			\
+		strlen/01_ok_test.c			\
+		strlen/02_ko_test.c			\
+		strlen/03_segfault_test.c		\
+		strlen/04_buserror_test.c
 OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
@@ -47,7 +47,7 @@ endif
 
 all: $(NAME)
 
-$(NAME): ../libunit.a $(SRC)
+$(NAME): ../libunit.a $(SRC) $(NAME).h
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(LDLIBS) $(SRC) -o $(NAME)
 
 $(OBJ_PATH):
@@ -69,7 +69,7 @@ endif
 	$(MAKE) -C ../
 
 test: $(NAME)
-	./tests
+	./$(NAME)
 
 .PHONY: clean
 clean:
