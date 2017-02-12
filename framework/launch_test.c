@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/12 16:13:09 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/12 16:14:47 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,22 @@ static void	ft_signal(t_test *tmp, int status)
 		ft_putendl(" : [UNEXPECTED SIGNAL ERROR]");
 }
 
+static void	ft_father_part(t_test *tmp, int *res_test, int status, int ret)
+{
+	wait(&status);
+	if (!WIFSIGNALED(status))
+	{
+		ret = tmp->f();
+		if (ret == 0)
+			ft_nosignal(tmp, res_test, 0);
+		else
+			ft_nosignal(tmp, res_test, 1);
+	}
+	else
+		ft_signal(tmp, status);
+	res_test[1]++;
+}
+
 void		launch_tests(t_test **testlist, int *res_test)
 {
 	t_test	*tmp;
@@ -62,18 +78,7 @@ void		launch_tests(t_test **testlist, int *res_test)
 		}
 		else
 		{
-			wait(&status);
-			if (!WIFSIGNALED(status))
-			{
-				ret = tmp->f();
-				if (ret == 0)
-					ft_nosignal(tmp, res_test, 0);
-				else
-					ft_nosignal(tmp, res_test, 1);
-			}
-			else
-				ft_signal(tmp, status);
-			res_test[1]++;
+			ft_father_part(tmp, res_test, status, ret);
 			tmp = tmp->next;
 		}
 	}
