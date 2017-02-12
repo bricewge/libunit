@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:54:10 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/12 14:50:30 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static void	ft_signal(t_test *tmp, int status)
 		ft_putendl(" : [BUSE]");
 	else if (status == 11)
 		ft_putendl(" : [SEGV]");
+	else if (status == 6)
+		ft_putendl(" : [FREE ERROR]");
 	else
 		ft_putendl(" : [UNEXPECTED SIGNAL ERROR]");
 }
@@ -55,6 +57,7 @@ void		launch_tests(t_test **testlist, int *res_test)
 		else if (pid == 0)//on est dans le processur fils
 		{
 			ret = tmp->f();
+			ft_del_test_lst(*testlist);
 			exit(0);
 		}
 		else//pid > 0 = on est dans le process pere
