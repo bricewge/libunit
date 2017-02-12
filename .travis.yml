@@ -1,4 +1,4 @@
 language: c
 compiler: clang
-script: make -C tests && ./tests/tests | tee $(tty) | tail -1 | grep "1/4 tests checked" -q
+script: make -C tests && ./tests/tests | tee >(cat) | tail -1 | grep "1/4 tests checked" -q
 os: osx
