@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "real-tests.h"
+#include "real_tests.h"
 
 int		medium_positive_loop_test(void)
 {

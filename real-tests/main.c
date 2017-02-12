@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "real-tests.h"
+#include "real_tests.h"
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
 
 	res_test[0] = 0;
 	res_test[1] = 0;
-	/* print_header(); */
+	print_header();
 	ft_atoi_launcher(res_test);
 	return (print_total(res_test));
 }

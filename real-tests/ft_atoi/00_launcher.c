@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "real-tests.h"
+#include "real_tests.h"
 #include "libunit.h"
 #include <limits.h>
 #include <stdlib.h>

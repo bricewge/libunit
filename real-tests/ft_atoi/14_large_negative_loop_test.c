@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "real-tests.h"
+#include "real_tests.h"
 
 int		large_negative_loop_test(void)
 {
