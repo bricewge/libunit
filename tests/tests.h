@@ -12,7 +12,8 @@
 
 #ifndef TESTS_H
 # define TESTS_H
-#include "libunit.h"
+# include "libunit.h"
+
 void		strlen_launcher(int *res_test);
 int			ok_test(void);
 int			ko_test(void);

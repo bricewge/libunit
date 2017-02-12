@@ -12,9 +12,9 @@
 
 #include "real_tests.h"
 
-int main()
+int	main(void)
 {
-	int		res_test[2];
+	int	res_test[2];
 
 	res_test[0] = 0;
 	res_test[1] = 0;
