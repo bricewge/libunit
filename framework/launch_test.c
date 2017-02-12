@@ -75,7 +75,7 @@ void		launch_tests(t_test **testlist, int *res_test)
 			exit(EXIT_FAILURE);
 		else if (pid == 0)
 		{
-			alarm(10);
+			alarm(ALARM_TIMER);
 			ret = tmp->f();
 			ft_del_test_lst(testlist);
 			exit(0);

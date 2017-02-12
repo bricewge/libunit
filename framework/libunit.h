@@ -12,6 +12,7 @@
 
 #ifndef LIBUNIT_H
 # define LIBUNIT_H
+# define ALARM_TIMER 10
 # include "libft.h"
 # include <signal.h>
 # include <sys/wait.h>
