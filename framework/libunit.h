@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:46:15 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:51:09 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/12 16:08:54 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct		s_test
 */
 t_test				*ft_create_test_lst(void);
 void				ft_add_test_lst(t_test *base);
-void				ft_del_test_lst(t_test *base);
+void				ft_del_test_lst(t_test **base);
 /*
 **			M_FRAMEWORK FUNCTIONS
 */

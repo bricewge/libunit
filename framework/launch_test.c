@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/12 14:50:30 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/12 16:09:18 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void		launch_tests(t_test **testlist, int *res_test)
 		else if (pid == 0)//on est dans le processur fils
 		{
 			ret = tmp->f();
-			ft_del_test_lst(*testlist);
+			ft_del_test_lst(testlist);
 			exit(0);
 		}
 		else//pid > 0 = on est dans le process pere

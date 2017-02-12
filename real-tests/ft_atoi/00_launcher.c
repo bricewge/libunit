@@ -6,7 +6,7 @@
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:36:58 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/11 23:18:32 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/12 16:06:53 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		ft_atoi_launcher(int *res_test)
 	load_test(&testlist, "Error test", &error_test);
 	load_test(&testlist, "Error stop test", &error_stop_test);
 	load_test(&testlist, "Error signe test", &error_signe_test);
-	load_test(&testlist, "Intmin test", &intmin_test);
+/*	load_test(&testlist, "Intmin test", &intmin_test);
 	load_test(&testlist, "Intmax test", &intmax_test);
 	load_test(&testlist, "Small negative loop test", small_negative_loop_test);
 	load_test(&testlist, "Small positive loop test", &small_positive_loop_test);
@@ -36,5 +36,6 @@ void		ft_atoi_launcher(int *res_test)
 	load_test(&testlist, "Medium positive loop test", &medium_positive_loop_test);
 	load_test(&testlist, "Large negative loop test", &large_negative_loop_test);
 	load_test(&testlist, "Large positive loop test", &large_positive_loop_test);
-	launch_tests(&testlist, res_test);
+*/	launch_tests(&testlist, res_test);
+	ft_del_test_lst(&testlist);
 }
