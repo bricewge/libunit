@@ -6,7 +6,7 @@
 #    By: starrit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 11:30:09 by starrit           #+#    #+#              #
-#    Updated: 2017/02/11 23:49:08 by bwaegene         ###   ########.fr        #
+#    Updated: 2017/02/12 13:49:18 by starrit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,32 +27,33 @@ NAME = libunit.a
 # Project related variables
 SRC_PATH = framework
 SRC_NAME =	ft_add_test_lst.c			\
-		ft_create_test_lst.c			\
-		ft_del_test_lst.c			\
-		load_test.c				\
-		launch_test.c				\
-		print_header.c				\
-		print_total.c
+			ft_create_test_lst.c		\
+			ft_del_test_lst.c			\
+			load_test.c					\
+			launch_test.c				\
+			print_header.c				\
+			print_total.c
 OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 LIB_PATH = libft
-LIB_NAME = 	ft_putstr.c				\
-		ft_putendl.c				\
-		ft_putchar.c				\
-		ft_strlen.c				\
-		ft_strdup.c				\
-		ft_strcpy.c				\
-		ft_putnbr.c				\
-		ft_atoi.c				\
-		ft_itoa.c				\
-		ft_isdigit.c				\
-		ft_isspace.c				\
-		ft_strnew.c				\
-		ft_memset.c
+LIB_NAME = 	ft_putstr.c					\
+			ft_putendl.c				\
+			ft_putchar.c				\
+			ft_strlen.c					\
+			ft_strdup.c					\
+			ft_strcpy.c					\
+			ft_putnbr.c					\
+			ft_atoi.c					\
+			ft_itoa.c					\
+			ft_isdigit.c				\
+			ft_isspace.c				\
+			ft_strnew.c					\
+			ft_memset.c					\
+			ft_strdel.c					\
+			ft_memdel.c
 LIB_OBJ = $(addprefix obj/, $(LIB_NAME:.c=.o))
-LIB_OBJ_PATH = $(LIB_PATH)/obj
 INCLUDE = framework
 HEADER = $(INCLUDE)/$(NAME:.a=.h)
 
@@ -75,17 +76,15 @@ $(OBJ): | $(OBJ_PATH)
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(LIB_OBJ_PATH):
-	mkdir $@
+# /!\ Dirty workaround /!\
+# If make on the libft directory should rebuild something then PHONY the rule
+# libft to build it. Otherwise it relink.
+ifeq ($(shell $(MAKE) --question -C ./$(LIB_PATH) ; echo $$?), 1)
+.PHONY: $(LIB_PATH)/obj/%.o
+endif
 
-$(LIB_PATH)/$(LIB_OBJ): | $(LIB_OBJ_PATH)
-
-$(LIB_PATH)/obj/%.o: $(LIB_PATH)/%.c $(LIB_PATH)/include/libft.h
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
-
-.PHONY: test
-test: $(NAME)
-	$(MAKE) -C tests test
+$(LIB_PATH)/obj/%.o:
+	$(MAKE) -C ./$(LIB_PATH) $(LIB_OBJ)
 
 .PHONY: clean
 clean:
