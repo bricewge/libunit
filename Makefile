@@ -86,6 +86,9 @@ endif
 $(LIB_PATH)/obj/%.o:
 	$(MAKE) -C ./$(LIB_PATH) $(LIB_OBJ)
 
+test: $(NAME)
+	$(MAKE) -C tests test
+
 .PHONY: clean
 clean:
 	$(MAKE) -C ./$(LIB_PATH) clean
