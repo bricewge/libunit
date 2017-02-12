@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:18:56 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 17:52:54 by bwaegene         ###   ########.fr       */
+/*   Updated: 2017/02/12 14:55:15 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ void	ft_del_test_lst(t_test *base)
 {
 	t_test	*tmp;
 
-	tmp = base;
-	while (base)
+	while (base->next)
 	{
-		while (tmp->next)
-			tmp = tmp->next;
-		free(tmp);
-		tmp = NULL;
-		tmp = base;
+		tmp = base->next;
+		free(base);
+		base = NULL;
+		base = tmp;
 	}
 }
