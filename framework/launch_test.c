@@ -6,7 +6,7 @@
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:03:38 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/12 16:14:47 by starrit          ###   ########.fr       */
+/*   Updated: 2017/02/12 17:09:47 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,17 @@ static void	ft_signal(t_test *tmp, int status)
 		ft_putendl(" : [SEGV]");
 	else if (status == 6)
 		ft_putendl(" : [FREE ERROR]");
+	else if (status == 14)
+		ft_putendl(" : [TIMEOUT]");
 	else
 		ft_putendl(" : [UNEXPECTED SIGNAL ERROR]");
 }
 
-static void	ft_father_part(t_test *tmp, int *res_test, int status, int ret)
+static void	ft_father_part(t_test *tmp, int *res_test, int ret)
 {
+	int		status;
+
+	status = 0;
 	wait(&status);
 	if (!WIFSIGNALED(status))
 	{
@@ -59,12 +64,10 @@ void		launch_tests(t_test **testlist, int *res_test)
 {
 	t_test	*tmp;
 	pid_t	pid;
-	int		status;
 	int		ret;
 
 	tmp = *testlist;
 	ret = 0;
-	status = 0;
 	while (tmp)
 	{
 		pid = fork();
@@ -72,13 +75,14 @@ void		launch_tests(t_test **testlist, int *res_test)
 			exit(EXIT_FAILURE);
 		else if (pid == 0)
 		{
+			alarm(100);
 			ret = tmp->f();
 			ft_del_test_lst(testlist);
 			exit(0);
 		}
 		else
 		{
-			ft_father_part(tmp, res_test, status, ret);
+			ft_father_part(tmp, res_test, ret);
 			tmp = tmp->next;
 		}
 	}
