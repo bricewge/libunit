@@ -26,9 +26,9 @@ NAME = libunit.a
 
 # Project related variables
 SRC_PATH = src
-SRC_NAME =	ft_add_test_lst.c			\
-						ft_create_test_lst.c	\
-						ft_del_test_lst.c			\
+SRC_NAME =	add_test_lst.c				\
+						create_test_lst.c			\
+						del_test_lst.c				\
 						load_test.c						\
 						launch_test.c					\
 						print_header.c				\

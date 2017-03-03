@@ -26,11 +26,11 @@ typedef struct		s_test
 /*
 **			LIST FUNCTIONS
 */
-t_test				*ft_create_test_lst(void);
-void				ft_add_test_lst(t_test *base);
-void				ft_del_test_lst(t_test **base);
+t_test				*create_test_lst(void);
+void				add_test_lst(t_test *base);
+void				del_test_lst(t_test **base);
 /*
-**			M_FRAMEWORK FUNCTIONS
+**			LIBUNIT FUNCTIONS
 */
 void				print_header(void);
 void				load_test(t_test **testlist, char *name, int (*f)(void));

@@ -12,7 +12,7 @@
 
 #include "libunit.h"
 
-static void	ft_nosignal(t_test *tmp, int *res, int a)
+static void	succes(t_test *tmp, int *res, int a)
 {
 	ft_putstr("    > ");
 	ft_putstr(tmp->name);
@@ -25,7 +25,7 @@ static void	ft_nosignal(t_test *tmp, int *res, int a)
 		ft_putendl(" : \033[31m[KO]\033[0m");
 }
 
-static void	ft_signal(t_test *tmp, int status)
+static void	error(t_test *tmp, int status)
 {
 	ft_putstr("    > ");
 	ft_putstr(tmp->name);
@@ -41,7 +41,7 @@ static void	ft_signal(t_test *tmp, int status)
 		ft_putendl(" : \033[31m[UNEXPECTED SIGNAL ERROR]\033[0m");
 }
 
-static void	ft_father_part(t_test *tmp, int *res_test, int ret)
+static void	father_part(t_test *tmp, int *res_test, int ret)
 {
 	int		status;
 
@@ -51,12 +51,12 @@ static void	ft_father_part(t_test *tmp, int *res_test, int ret)
 	{
 		ret = tmp->f();
 		if (ret == 0)
-			ft_nosignal(tmp, res_test, 0);
+			succes(tmp, res_test, 0);
 		else
-			ft_nosignal(tmp, res_test, 1);
+			succes(tmp, res_test, 1);
 	}
 	else
-		ft_signal(tmp, status);
+		error(tmp, status);
 	res_test[1]++;
 }
 
@@ -77,12 +77,12 @@ void		launch_tests(t_test **testlist, int *res_test)
 		{
 			alarm(ALARM_TIMER);
 			ret = tmp->f();
-			ft_del_test_lst(testlist);
+			del_test_lst(testlist);
 			exit(0);
 		}
 		else
 		{
-			ft_father_part(tmp, res_test, ret);
+			father_part(tmp, res_test, ret);
 			tmp = tmp->next;
 		}
 	}

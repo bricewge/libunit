@@ -20,9 +20,9 @@ void		load_test(t_test **testlist, char *name, int (*f)(void))
 	if (!name || !f)
 		return ;
 	if (!(*testlist))
-		*testlist = ft_create_test_lst();
+		*testlist = create_test_lst();
 	else
-		ft_add_test_lst(*testlist);
+		add_test_lst(*testlist);
 	tmp = *testlist;
 	while (tmp->next)
 		tmp = tmp->next;

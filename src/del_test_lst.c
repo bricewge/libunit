@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_test_lst.c                               :+:      :+:    :+:   */
+/*   ft_del_test_lst.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 13:11:32 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:51:58 by bwaegene         ###   ########.fr       */
+/*   Created: 2017/02/11 13:18:56 by starrit           #+#    #+#             */
+/*   Updated: 2017/02/12 15:54:11 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-t_test	*ft_create_test_lst(void)
+void	del_test_lst(t_test **base)
 {
-	t_test *new_test;
+	t_test	*tmp;
 
-	if ((new_test = (t_test*)malloc(sizeof(*new_test))))
+	while ((*base)->next)
 	{
-		new_test->name = NULL;
-		new_test->f = NULL;
-		new_test->next = NULL;
+		tmp = (*base)->next;
+		ft_strdel(&(*base)->name);
+		free(*base);
+		*base = NULL;
+		*base = tmp;
+		tmp = NULL;
 	}
-	return (new_test);
+	ft_strdel(&(*base)->name);
+	free(*base);
+	base = NULL;
 }
