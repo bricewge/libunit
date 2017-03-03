@@ -17,7 +17,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 ## Flags for the C preprocessor
-CPPFLAGS = -I$(INCLUDE) -I$(LIB_PATH)/include
+CPPFLAGS = -I$(INCLUDE) 
 ## Libraries path
 LDFLAGS = -L$(LIB)
 ## Libraries to link into the executable
@@ -32,28 +32,13 @@ SRC_NAME =	add_test_lst.c				\
 						load_test.c						\
 						launch_test.c					\
 						print_header.c				\
-						print_total.c
+						print_total.c					\
+						string.c							\
+						print.c
 OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
-LIB_PATH = libft
-LIB_NAME = 	ft_putstr.c					\
-			ft_putendl.c				\
-			ft_putchar.c				\
-			ft_strlen.c					\
-			ft_strdup.c					\
-			ft_strcpy.c					\
-			ft_putnbr.c					\
-			ft_atoi.c					\
-			ft_itoa.c					\
-			ft_isdigit.c				\
-			ft_isspace.c				\
-			ft_strnew.c					\
-			ft_memset.c					\
-			ft_strdel.c					\
-			ft_memdel.c
-LIB_OBJ = $(addprefix obj/, $(LIB_NAME:.c=.o))
 INCLUDE = include
 HEADER = $(INCLUDE)/$(NAME:.a=.h)
 

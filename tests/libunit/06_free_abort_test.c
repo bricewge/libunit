@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strswap.c                                       :+:      :+:    :+:   */
+/*   06_free_abort_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+        */
+/*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/19 15:01:00 by bwaegene          #+#    #+#             */
-/*   Updated: 2016/12/29 05:46:57 by bwaegene         ###   ########.fr       */
+/*   Created: 2017/02/12 17:41:37 by starrit           #+#    #+#             */
+/*   Updated: 2017/02/12 19:20:38 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_strswap(char **a, char **b)
-{
-	char *tmp;
+#include "libunit.h"
+#include <stdlib.h>
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+int		free_abort_test(void)
+{
+	free(" ");
+	if (1)
+		return (0);
+	else
+		return (-1);
 }
+

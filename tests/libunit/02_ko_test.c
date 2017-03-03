@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   02_basic_error_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/26 12:27:17 by bwaegene          #+#    #+#             */
-/*   Updated: 2016/12/26 13:45:27 by bwaegene         ###   ########.fr       */
+/*   Created: 2017/02/11 15:44:02 by bwaegene          #+#    #+#             */
+/*   Updated: 2017/02/11 19:52:06 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libunit.h"
+#include <string.h>
 
-int		ft_strequ(char const *s1, char const *s2)
+int		ko_test(void)
 {
-	if (s1 && s2)
-		return (ft_strcmp((char *)s1, (char *)s2) ? 0 : 1);
-	return (0);
+	if (ft_strlen("trololol") == strlen("trololo"))
+		return (0);
+	else
+		return (-1);
 }

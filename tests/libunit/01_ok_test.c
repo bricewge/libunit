@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/26 16:20:22 by bwaegene          #+#    #+#             */
-/*   Updated: 2016/12/26 16:24:09 by bwaegene         ###   ########.fr       */
+/*   Created: 2017/02/11 13:36:08 by bwaegene          #+#    #+#             */
+/*   Updated: 2017/02/11 19:51:38 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libunit.h"
+#include <string.h>
 
-void	ft_putstr_fd(char const *s, int fd)
+int		ok_test(void)
 {
-	if (s)
-		write(fd, s, ft_strlen((char *)s));
+	if (ft_strlen("Hello") == strlen("Hello"))
+		return (0);
+	else
+		return (-1);
 }

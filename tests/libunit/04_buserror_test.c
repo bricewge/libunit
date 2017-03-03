@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   02_basic_error_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwaegene <bwaegene@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/26 11:28:17 by bwaegene          #+#    #+#             */
-/*   Updated: 2016/12/26 12:19:25 by bwaegene         ###   ########.fr       */
+/*   Created: 2017/02/11 15:44:02 by bwaegene          #+#    #+#             */
+/*   Updated: 2017/02/11 22:36:15 by bwaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libunit.h"
+#include <string.h>
 
-char	*ft_strmap(char const *s, char (*f)(char))
+int		buserror_test(void)
 {
-	size_t	len;
-	char	*result;
+	char *s;
 
-	result = NULL;
+	s = NULL;
+	s = ft_strcpy("foobar", "trololol");
 	if (s)
-	{
-		len = ft_strlen((char *)s);
-		result = ft_strnew(len);
-	}
-	while (result && s[--len])
-		result[len] = f(s[len]);
-	return (result);
+		return (0);
+	else
+		return (-1);
 }

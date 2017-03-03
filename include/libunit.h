@@ -13,8 +13,10 @@
 #ifndef LIBUNIT_H
 # define LIBUNIT_H
 # define ALARM_TIMER 10
-# include "libft.h"
 # include <signal.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 # include <sys/wait.h>
 
 typedef struct		s_test
@@ -23,6 +25,18 @@ typedef struct		s_test
 	int				(*f)(void);
 	struct s_test	*next;
 }					t_test;
+/*
+**			LIBFT FUNCTIONS
+*/
+size_t				ft_strlen(const char *s);
+void				ft_memdel(void **ap);
+void				ft_strdel(char **as);
+char				*ft_strcpy(char *dst, const char *src);
+char				*ft_strdup(const char *s1);
+void				ft_putchar(int c);
+void				ft_putstr(char *str);
+void				ft_putendl(char const *s);
+void				ft_putnbr(int nb);
 /*
 **			LIST FUNCTIONS
 */
