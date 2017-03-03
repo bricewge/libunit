@@ -39,7 +39,7 @@ OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
-LIB = framework
+LIB = include
 INCLUDE = include
 HEADER = ../$(LIB)/$(LIB).h
 

@@ -25,14 +25,14 @@ LDLIBS = -lft
 NAME = libunit.a
 
 # Project related variables
-SRC_PATH = framework
+SRC_PATH = src
 SRC_NAME =	ft_add_test_lst.c			\
-			ft_create_test_lst.c		\
-			ft_del_test_lst.c			\
-			load_test.c					\
-			launch_test.c				\
-			print_header.c				\
-			print_total.c
+						ft_create_test_lst.c	\
+						ft_del_test_lst.c			\
+						load_test.c						\
+						launch_test.c					\
+						print_header.c				\
+						print_total.c
 OBJ_PATH =  obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
@@ -54,7 +54,7 @@ LIB_NAME = 	ft_putstr.c					\
 			ft_strdel.c					\
 			ft_memdel.c
 LIB_OBJ = $(addprefix obj/, $(LIB_NAME:.c=.o))
-INCLUDE = framework
+INCLUDE = include
 HEADER = $(INCLUDE)/$(NAME:.a=.h)
 
 DEBUG ?= 0
