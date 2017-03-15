@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   03_basic_jump_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 14:20:14 by bwaegene          #+#    #+#             */
-/*   Updated: 2017/02/12 16:09:46 by starrit          ###   ########.fr       */
+/*   Created: 2017/02/11 21:57:40 by starrit           #+#    #+#             */
+/*   Updated: 2017/02/11 23:21:31 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "real_tests.h"
+#include "libft.h"
 
-int	main(void)
+int		basic_jump_test(void)
 {
-	int	res_test[2];
-
-	res_test[0] = 0;
-	res_test[1] = 0;
-	print_header();
-	ft_atoi_launcher(res_test);
-	return (print_total(res_test));
+	if (ft_atoi("\r\t\v\n\f") == atoi("\r\t\v\n\f"))
+		return (0);
+	else
+		return (-1);
 }
+

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   15_large_positive_loop_test.c                      :+:      :+:    :+:   */
+/*   12_medium_negative_loop_test.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 22:23:21 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:24:35 by starrit          ###   ########.fr       */
+/*   Created: 2017/02/11 22:13:58 by starrit           #+#    #+#             */
+/*   Updated: 2017/02/11 23:23:56 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include "libft.h"
-#include "real_tests.h"
 
-int		large_positive_loop_test(void)
+int		medium_negative_loop_test(void)
 {
-	if (ft_atoi(ft_itoa(LLONG_MAX + 1)) == atoi(ft_itoa(LLONG_MAX + 1)))
+	if (ft_atoi(ft_itoa(INT_MIN - 2523874)) == atoi(ft_itoa(INT_MIN - 2523874)))
 		return (0);
 	else
 		return (-1);

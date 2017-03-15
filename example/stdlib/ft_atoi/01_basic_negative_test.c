@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   12_medium_negative_loop_test.c                     :+:      :+:    :+:   */
+/*   basic_negative_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 22:13:58 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:23:56 by starrit          ###   ########.fr       */
+/*   Created: 2017/02/11 21:56:24 by starrit           #+#    #+#             */
+/*   Updated: 2017/02/12 13:04:59 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "real_tests.h"
+#include "tests.h"
 
-int		medium_negative_loop_test(void)
+int		basic_negative_test(void)
 {
-	if (ft_atoi(ft_itoa(INT_MIN - 2523874)) == atoi(ft_itoa(INT_MIN - 2523874)))
+	if (ft_atoi("-+789") == atoi("-+789"))
 		return (0);
 	else
 		return (-1);

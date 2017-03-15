@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "real_tests.h"
+#include "tests.h"
 #include "libunit.h"
-#include <limits.h>
-#include <stdlib.h>
 
 void		ft_atoi_launcher(int *res_test)
 {
@@ -37,5 +35,5 @@ void		ft_atoi_launcher(int *res_test)
 	load_test(&testlist, "Large negative loop test", &large_negative_loop_test);
 	load_test(&testlist, "Large positive loop test", &large_positive_loop_test);
 	launch_tests(&testlist, res_test);
-	ft_del_test_lst(&testlist);
+	del_test_lst(&testlist);
 }

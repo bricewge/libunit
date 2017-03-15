@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   06_error_stop_test.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 22:07:09 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:21:57 by starrit          ###   ########.fr       */
+/*   Created: 2017/02/11 14:20:14 by bwaegene          #+#    #+#             */
+/*   Updated: 2017/02/12 16:09:46 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "real_tests.h"
+#include "tests.h"
+#include "libunit.h"
 
-int		error_stop_test(void)
+int	main(void)
 {
-	if (ft_atoi("456ghjk789") == atoi("456ghjk789"))
-		return (0);
-	else
-		return (-1);
+	int	res_test[2];
+
+	res_test[0] = 0;
+	res_test[1] = 0;
+	print_header();
+	ft_atoi_launcher(res_test);
+	return (print_total(res_test));
 }

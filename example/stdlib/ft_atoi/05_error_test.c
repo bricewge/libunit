@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   10_small_negative_loop_test.c                      :+:      :+:    :+:   */
+/*   05_error_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 22:11:12 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:23:40 by starrit          ###   ########.fr       */
+/*   Created: 2017/02/11 22:03:41 by starrit           #+#    #+#             */
+/*   Updated: 2017/02/11 23:21:52 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "real_tests.h"
 
-int		small_negative_loop_test(void)
+int		error_test(void)
 {
-	if (ft_atoi(ft_itoa(INT_MIN - 1)) == atoi(ft_itoa(INT_MIN - 1)))
+	if (ft_atoi("ghjk") == atoi("ghjk"))
 		return (0);
 	else
 		return (-1);

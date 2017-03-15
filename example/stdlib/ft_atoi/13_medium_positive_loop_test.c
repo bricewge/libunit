@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   07_error_signe_test.c                              :+:      :+:    :+:   */
+/*   13_medium_positive_loop_test.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 22:08:12 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/11 23:22:04 by starrit          ###   ########.fr       */
+/*   Created: 2017/02/11 22:22:36 by starrit           #+#    #+#             */
+/*   Updated: 2017/02/11 23:24:23 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include "libft.h"
-#include "real_tests.h"
 
-int		error_signe_test(void)
+int		medium_positive_loop_test(void)
 {
-	if (ft_atoi("--+-123") == atoi("--+-123"))
+	if (ft_atoi(ft_itoa(INT_MAX + 2564257)) == atoi(ft_itoa(INT_MAX + 2564257)))
 		return (0);
 	else
 		return (-1);

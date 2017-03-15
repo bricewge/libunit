@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   real-tests.h                                       :+:      :+:    :+:   */
+/*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REAL_TESTS_H
-# define REAL_TESTS_H
-# include "libunit.h"
-# include <limits.h>
+#ifndef TESTS_H
+# define TESTS_H
 
 void		ft_atoi_launcher(int *res_test);
 int			basic_positive_test(void);

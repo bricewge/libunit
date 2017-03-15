@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   07_error_signe_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: starrit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 21:58:29 by starrit           #+#    #+#             */
-/*   Updated: 2017/02/12 13:05:08 by starrit          ###   ########.fr       */
+/*   Created: 2017/02/11 22:08:12 by starrit           #+#    #+#             */
+/*   Updated: 2017/02/11 23:22:04 by starrit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "real_tests.h"
 
-int		null_test(void)
+int		error_signe_test(void)
 {
-	if (ft_atoi("0") == atoi("0"))
+	if (ft_atoi("--+-123") == atoi("--+-123"))
 		return (0);
 	else
 		return (-1);
