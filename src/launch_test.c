@@ -78,7 +78,7 @@ void		launch_tests(t_test **testlist, int *res_test)
 			alarm(ALARM_TIMER);
 			ret = tmp->f();
 			del_test_lst(testlist);
-			exit(0);
+			exit(ret);
 		}
 		else
 		{
