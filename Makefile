@@ -18,10 +18,6 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 ## Flags for the C preprocessor
 CPPFLAGS = -I$(INCLUDE) 
-## Libraries path
-LDFLAGS = -L$(LIB)
-## Libraries to link into the executable
-LDLIBS = -lft
 NAME = libunit.a
 
 # Project related variables
@@ -49,8 +45,8 @@ endif
 
 all: $(NAME)
 
-$(NAME): $(addprefix $(LIB_PATH)/, $(LIB_OBJ)) $(OBJ)
-	ar rc $(NAME) $(addprefix $(LIB_PATH)/, $(LIB_OBJ)) $(OBJ)
+$(NAME): $(OBJ)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 $(OBJ_PATH):
@@ -61,26 +57,14 @@ $(OBJ): | $(OBJ_PATH)
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
-# /!\ Dirty workaround /!\
-# If make on the libft directory should rebuild something then PHONY the rule
-# libft to build it. Otherwise it relink.
-ifeq ($(shell $(MAKE) --question -C ./$(LIB_PATH) ; echo $$?), 1)
-.PHONY: $(LIB_PATH)/obj/%.o
-endif
-
-$(LIB_PATH)/obj/%.o:
-	$(MAKE) -C ./$(LIB_PATH) $(LIB_OBJ)
-
 test: $(NAME)
 	$(MAKE) -C tests test
 
 .PHONY: clean
 clean:
-	$(MAKE) -C ./$(LIB_PATH) clean
 	$(RM) -r $(OBJ_PATH)
 
 fclean: clean
-	$(MAKE) -C ./$(LIB_PATH) fclean
 	$(RM) -r $(NAME) $(NAME).dSYM
 
 re: fclean
