@@ -49,7 +49,7 @@ static void	father_part(t_test *tmp, int *res_test, int ret)
 	wait(&status);
 	if (!WIFSIGNALED(status))
 	{
-		ret = tmp->f();
+		ret = WEXITSTATUS(status);
 		if (ret == 0)
 			succes(tmp, res_test, 0);
 		else
