@@ -18,11 +18,11 @@ static void	succes(t_test *tmp, int *res, int a)
 	ft_putstr(tmp->name);
 	if (a == 0)
 	{
-		ft_putendl(" : \033[32m[OK]\033[0m");
+		ft_putendl(": \033[32m[OK]\033[0m");
 		res[0]++;
 	}
 	else
-		ft_putendl(" : \033[31m[KO]\033[0m");
+		ft_putendl(": \033[31m[KO]\033[0m");
 }
 
 static void	error(t_test *tmp, int status)
@@ -30,15 +30,15 @@ static void	error(t_test *tmp, int status)
 	ft_putstr("    > ");
 	ft_putstr(tmp->name);
 	if (status == 10)
-		ft_putendl(" : \033[31m[BUSE]\033[0m");
+		ft_putendl(": \033[31m[BUSE]\033[0m");
 	else if (status == 11)
-		ft_putendl(" : \033[31m[SEGV]\033[0m");
+		ft_putendl(": \033[31m[SEGV]\033[0m");
 	else if (status == 6)
-		ft_putendl(" : \033[31m[SIGABRT]\033[0m");
+		ft_putendl(": \033[31m[SIGABRT]\033[0m");
 	else if (status == 14)
-		ft_putendl(" : \033[33m[TIMEOUT]\033[0m");
+		ft_putendl(": \033[33m[TIMEOUT]\033[0m");
 	else
-		ft_putendl(" : \033[31m[UNEXPECTED SIGNAL ERROR]\033[0m");
+		ft_putendl(": \033[31m[UNEXPECTED SIGNAL ERROR]\033[0m");
 }
 
 static void	father_part(t_test *tmp, int *res_test, int ret)
